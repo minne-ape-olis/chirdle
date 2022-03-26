@@ -241,7 +241,13 @@ function App() {
   }
 
   return (
-    <div className="h-screen flex flex-col">
+    <div
+      className="h-screen flex flex-col"
+      style={{
+        backgroundImage: 'url("/chimp_background.png")',
+        backgroundSize: 'auto',
+      }}
+    >
       <Navbar
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
