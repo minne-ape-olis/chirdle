@@ -39,6 +39,7 @@ import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
+import { url } from 'inspector'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -239,6 +240,7 @@ function App() {
       }
     }
   }
+  const chimp = isGameWon ? '/adolescent.gif' : '/pensive.gif'
 
   return (
     <div
@@ -254,13 +256,34 @@ function App() {
         setIsSettingsModalOpen={setIsSettingsModalOpen}
       />
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
-        <div className="pb-6 grow">
-          <Grid
-            guesses={guesses}
-            currentGuess={currentGuess}
-            isRevealing={isRevealing}
-            currentRowClassName={currentRowClass}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            flexGrow: 1,
+          }}
+        >
+          <img
+            src={chimp}
+            alt="chimp"
+            style={{ width: '200px', height: '200px' }}
           />
+          <div className="pb-6 pr-12 pl-12 pt-12">
+            <Grid
+              guesses={guesses}
+              currentGuess={currentGuess}
+              isRevealing={isRevealing}
+              currentRowClassName={currentRowClass}
+            />
+          </div>
+
+          {/* <img
+            src={chimp}
+            alt="chimp"
+            style={{ width: '200px', height: '200px' }}
+          /> */}
         </div>
         <Keyboard
           onChar={onChar}
