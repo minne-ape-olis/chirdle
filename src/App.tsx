@@ -39,7 +39,6 @@ import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
-import { url } from 'inspector'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
